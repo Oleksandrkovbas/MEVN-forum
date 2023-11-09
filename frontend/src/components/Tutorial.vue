@@ -91,7 +91,7 @@
             }
         },
         methods: {
-            getTutorial(id){
+            getTutorial(id){             
                 TutorialDataService.get(id)
                     .then(response => {
                         this.currentTutorial = response.data;
@@ -103,6 +103,7 @@
             },
 
             updatePublished(status){
+                console.log(status);
                 var data = {
                     id: this.currentTutorial.id,
                     title: this.currentTutorial.title,
@@ -145,7 +146,7 @@
         },
         mounted(){
             this.message = '';
-            this.getTutorial(this.$router.params.id);
+            this.getTutorial(this.$route.params.id);
         }
     }
 </script>

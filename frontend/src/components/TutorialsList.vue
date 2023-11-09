@@ -114,6 +114,10 @@
                 this.currentTutorial = null;
                 this.currentIndex = -1;
             },
+            setActiveTutorial(tutorial, index) {
+                this.currentTutorial = tutorial;
+                this.currentIndex = tutorial ? index : -1;
+            },
             removeAllTutorials(){
                 TutorialDataService.deleteAll()
                     .then(response => {
